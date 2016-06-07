@@ -7,8 +7,16 @@ def shout(input)
 end
 
 def repeat(input, num = 2)
-    next_input = " #{input}"
-    input + next_input * (num-1)
+  # My two different ways to do this
+
+  # next_input = " #{input}"
+  # input + next_input * (num-1)
+
+  input_index = []
+  num.times do
+    input_index << input
+  end
+  return input_index.join(" ")
 end
 
 def start_of_word(input, number)
@@ -19,28 +27,20 @@ def first_word(input)
   (input.split(/\s/))[0]
 end
 
-#
-# # first_word
-# def test_first_word
-#   assert_equal "Hello", first_word("Hello World")
-#   assert_equal "oh", first_word("oh dear")
-# end
-#
-# # titleize
-# def test_titleize_capitalizes_a_word
-#   assert_equal "Jaws", titleize("jaws")
-# end
-#
-# # capitalize every word
-# def test_titleize_title_case
-#   assert_equal "David Copperfield", titleize("david copperfield")
-# end
-#
-# def test_titleize_not_little_words
-#   assert_equal "War and Peace", titleize("war and peace")
-# end
-#
-# def test_titleize_little_words_at_start
-#    assert_equal "The Bridge over the River Kwai", titleize("the bridge over the river kwai")
-# end
-# end
+def titleize(input)
+  puncs = ['and', 'over', 'the']
+  array = input.split(' ')
+  array.map! do |x|
+    if puncs.include? x.downcase
+      x.downcase
+    else
+      x.capitalize
+    end
+  end
+  array[0] = array[0].capitalize
+  return array.join(" ")
+
+  # To capitalize every word in a sentece:
+  # input.split.map { |x| x.capitalize }.join(" ")
+
+end
