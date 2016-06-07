@@ -15,18 +15,10 @@ def start_of_word(input, number)
   input[0, number]
 end
 
-#
-# def test_start_of_word_returns_first_two_letters
-#   assert_equal "Bo", start_of_word("Bob", 2)
-# end
-#
-# def test_start_of_word_returns_first_many_letters
-#   s = "abcdefg"
-#
-#   assert_equal "a", start_of_word(s, 1)
-#   assert_equal "ab", start_of_word(s, 2)
-#   assert_equal "abc", start_of_word(s, 3)
-# end
+def first_word(input)
+  (input.split(/\s/))[0]
+end
+
 #
 # # first_word
 # def test_first_word
