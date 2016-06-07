@@ -41,7 +41,8 @@ class TestTemperature < MiniTest::Test
   end
 
 end
-
+# C = (F - 32) * 5/9
+# F = C * 9/5 + 32
 # Remember the difference between integers and floats:
 # 1/2 equals 0
 # but 1.0/2.0 equals 0.5
