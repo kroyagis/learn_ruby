@@ -1,27 +1,10 @@
-def ftoc_converts_freezing_temperature
+# C = (F - 32) * 5/9
+# F = C * 9/5 + 32
 
+def ftoc(temperature)
+  temperature = (temperature - 32) * 5/9
 end
 
-def ftoc_converts_boiling_temperature
-
-end
-
-def ftoc_converts_body_temperature
-
-end
-
-def ftoc_convers_arbitrary_temperature
-
-end
-
-def ctof_converts_freezing_temperature
-
-end
-
-def ctof_converts_boiling_temperature
-
-end
-
-def ctof_converts_arbitrary_temperature
-
+def ctof(temperature)
+  temperature = temperature * 9/5 + 32
 end
