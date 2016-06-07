@@ -12,18 +12,37 @@ def translate(input)
     end
   end
 
-  if vowel.include? input[0]
+  input_array = input.split(//)
+  i = 0 # counter
+
+  # input starts with vowel
+  if vowel.include? input[i]
     return input + "ay"
   end
-  if consonant.include? input[0]
-    return input[1, (input.length)] + input[0] + "ay"
+
+  # input starts with consonant
+  return_input = []
+  while consonant.include? input_array[i]
+    return_input << input_array[i]
+    input_array.delete_at(i)
   end
+  return input_array.join + return_input.join + "ay"
+
+
+
+  # if vowel.include? input_array[0]
+  #   return input + "ay"
+  # end
+  #
+  # if consonant.include? input_array[0]
+  #   return input[1, (input.length)] + input[0] + "ay"
+  # end
+  #
+  # if (consonant.include? input_array[0]) && (consonant.include? input_array[1])
+  #   return input[2..(input.length-1)]
+  # end
 end
-#
-# def test_translate_word_starting_with_consonant
-#   s = translate("banana")
-#   assert_equal "ananabay", s
-# end
+
 #
 # def test_translate_word_starting_with_two_consonants
 #   s = translate("cherry")
