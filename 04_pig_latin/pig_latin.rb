@@ -13,7 +13,10 @@ def translate(input)
   end
 
   if vowel.include? input[0]
-    input + "ay"
+    return input + "ay"
+  end
+  if consonant.include? input[0]
+    return input[1, (input.length)] + input[0] + "ay"
   end
 end
 #
