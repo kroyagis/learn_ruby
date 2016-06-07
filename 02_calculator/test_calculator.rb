@@ -68,14 +68,13 @@ class TestCalculator < MiniTest::Test
     assert_equal 2, factorial(2)
 
   end
-  #
-  # def test_computes_factorial_5
-  #   assert_equal 120, factorial(5)
-  #
-  # end
-  #
-  # def test_computes_factorial_10
-  #   assert_equal 3,628,800, factorial(10)
-  #
-  # end
+
+  def test_computes_factorial_5
+    assert_equal 120, factorial(5)
+
+  end
+
+  def test_computes_factorial_10
+    assert_equal 3628800, factorial(10)
+  end
 end

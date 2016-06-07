@@ -19,11 +19,5 @@ def multiply_several(x)
 end
 
 def factorial(x)
-  if x == 0
-    1
-  elsif x > 0
-    x.times do |i|
-      i * (i + 1)
-    end
-  end
+  (1..x).inject(:*) || 1
 end
