@@ -24,6 +24,14 @@ class Temperature
       return value
     end
   end
+
+  def self.in_celsius(input)
+    self.new({:c => input})
+  end
+
+  def self.in_fahrenheit(input)
+    self.new({:f => input})
+  end
 end
 
 # test = Temperature.new({:f => 50})
