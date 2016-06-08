@@ -3,42 +3,34 @@
 # user input is phoneme followed by phoneme... I think
 # e.g) 'ququiet' 'schschool'
 
-
 def translate(input)
-  alphabets = [*'a'..'z']
   vowel = ['a', 'e', 'o', 'i', 'u']
-  consonant = (alphabets - vowel)
-
-
-  input_word_array = input.split(/\s/) # splits the user input by white space
-  word_alphabets_array = [] # an array for storing an array of alphabetized user input
-
+  phoneme_alphabets = [['s', 'c', 'h'], ['q', 'u']] # no no list...
+  alphabets_array = [] # an array for storing an array of alphabetized user input
   master_return = [] # master array which stores the converted piglatins
 
-
-  input_word_array.each do |word|
-    word_alphabets_array << word.split(//)
+  words_array = input.split(/\s/) # splits the user input by white space
+  words_array.each do |word|
+    alphabets_array << word.split(//)
   end
 
-  phoneme_list = [['s', 'c', 'h'], ['q', 'u']] # no no list...
+  alphabets_array.each do |alphabets|
+    return_consonants = [] # resets every loop!!!
 
-  word_alphabets_array.each do |word_alphabets|
-    consonant_return = [] # resets every loop!!!
-
-    if vowel.include? word_alphabets[0] # when input starts with vowel
-      master_return << (word_alphabets.join + "ay")
-    elsif consonant.include? word_alphabets[0] # when input starts with a consonant
-      phoneme_list.each do |phoneme_word| # check to see if the word contains phoneme
-          while phoneme_word.include? word_alphabets[0]
-            consonant_return << word_alphabets[0]
-            word_alphabets.delete_at(0)
-          end
+    if vowel.include? alphabets[0] # when input starts with vowel
+      master_return << (alphabets.join + "ay")
+    else # when input starts with a consonant
+      phoneme_alphabets.each do |phoneme_alphabets| # check to see if the word contains phoneme
+        while phoneme_alphabets.include? alphabets[0]
+          return_consonants << alphabets[0]
+          alphabets.delete_at(0)
+        end
       end
-      while consonant.include? word_alphabets[0]
-        consonant_return << word_alphabets[0]
-        word_alphabets.delete_at(0)
+      while !vowel.include? alphabets[0]
+        return_consonants << alphabets[0]
+        alphabets.delete_at(0)
       end
-      master_return << word_alphabets.join + consonant_return.join + "ay"
+      master_return << alphabets.join + return_consonants.join + "ay"
     end
   end
   return master_return.join(' ')

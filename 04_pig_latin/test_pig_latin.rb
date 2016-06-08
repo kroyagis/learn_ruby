@@ -52,6 +52,11 @@ class TestPigLatin < MiniTest::Test
     assert_equal "ethay ickquay ownbray oxfay", s
   end
 
+  # def test_translates_weird_phoneme
+  #   s = translate("ququschschool")
+  #   assert_equal "quschschoolquay", s
+  # end
+
   # Extra challenges:
   # Write tests and get them to pass for:
   # * capitalized words are still capitalized (but with a different initial capital letter, of course)
