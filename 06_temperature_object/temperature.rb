@@ -32,16 +32,21 @@ class Temperature
   def self.in_fahrenheit(input)
     self.new({:f => input})
   end
-
-
+  
 end
 
 class Celsius < Temperature
-
+  def initialize(temperature)
+    @unit = :c
+    @value = temperature
+  end
 end
 
 class Fahrenheit < Temperature
-
+  def initialize(temperature)
+    @unit = :f
+    @value = temperature
+  end
 end
 
 # test = Temperature.new({:f => 50})
