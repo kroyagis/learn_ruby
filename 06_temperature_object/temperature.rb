@@ -32,7 +32,7 @@ class Temperature
   def self.in_fahrenheit(input)
     self.new({:f => input})
   end
-  
+
 end
 
 class Celsius < Temperature
@@ -49,17 +49,5 @@ class Fahrenheit < Temperature
   end
 end
 
-# test = Temperature.new({:f => 50})
-
 # C * 9/5 + 32
 # (F - 32) * 5/9
-# class MotorCycle
-#   def initialize(make, color)
-#     @make, @color = make, color
-#   end
-# end
-#
-# m = MotorCycle.new('Honda', 'blue')
-# m.instance_variable_set(:@make, 'Kawasaki')
-# m.instance_variable_set(:@gears, 4)
-# puts m.inspect
