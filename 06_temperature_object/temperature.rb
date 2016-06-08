@@ -35,6 +35,7 @@ class Temperature
 end
 
 class Celsius < Temperature
+
   def initialize(temperature)
     @unit = :c
     @value = temperature
@@ -46,6 +47,7 @@ class Fahrenheit < Temperature
     @unit = :f
     @value = temperature
   end
+  
 end
 
 # C * 9/5 + 32
