@@ -40,6 +40,10 @@ class Celsius < Temperature
 
 end
 
+class Fahrenheit < Temperature
+
+end
+
 # test = Temperature.new({:f => 50})
 
 # C * 9/5 + 32
