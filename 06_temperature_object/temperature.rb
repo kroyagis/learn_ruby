@@ -3,7 +3,6 @@ class Temperature
 
   def initialize(input)
     input.each do |unit, value|
-      # instance_variable_set("@#{unit}", value)
       @unit = unit
       @value = value
     end
